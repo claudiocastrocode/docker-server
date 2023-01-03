@@ -1,0 +1,30 @@
+FEDORA 37
+
+Antes de subir as imagens:
+
+Adicionar no hosts (caminho: etc/hosts)
+
+127.0.0.1 meuprojeto.com www.meuprojeto.com
+
+============================================
+
+Gerar Certificado Digital com MKCERT
+
+Instalar as ferramentas nss-tools:
+sudo dnf install nss-tools
+
+Baixar o pacote binário para a instalação:
+curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest| grep browser_download_url  | grep linux-amd64 | cut -d '"' -f 4 | wget -qi -
+
+Tornar o arquivo baixado executável e colocar o binário em /usr/local/bin:
+mv mkcert-v*-linux-amd64 mkcert
+chmod a+x mkcert
+sudo mv mkcert /usr/local/bin/
+
+Instalar a CA local no armazenamento confiável do sistema:
+mkcert -install
+
+Dentro da pasta ssl do projeto criar o certificado para o domínio:
+mkcert meuprojeto.com (pode criar mais de um domínio e incluir na sequência)
+
+Copiar as chaves, uma para cada diretório: ssl/certs e ssl/private (key)

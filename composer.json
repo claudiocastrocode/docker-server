@@ -1,0 +1,17 @@
+{
+    "name": "claudiocastrocode/projeto",
+    "description": "Descrição do Projeto",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Claudio Castro"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
