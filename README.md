@@ -4,6 +4,6 @@
 
 Gerar o certificado digital seguindo as instruções no arquivo "importante.txt" e subir o projeto com Docker-Compose "docker-compose up -d".
 
-Testado no Fedora 37.
+Roda no Fedora 37. Não testado em outras distros.
 
 ![Meu Projeto](https://user-images.githubusercontent.com/71572522/210380572-3dc706d9-f1ce-497b-a31b-33779eb892db.png)
